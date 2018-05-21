@@ -1,0 +1,17 @@
+version: '3'
+services:
+  ci:
+    image: jenkinsci/blueocean
+    volumes:
+      - ./volumes/jenkins_home:/var/jenkins_home
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+  node_build:
+    build: ./c_node/
+    ports:
+      - 22
+  go_build:
+    build: ./c_go/
+    ports:
+      - 22

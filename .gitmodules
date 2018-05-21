@@ -1,0 +1,6 @@
+[submodule "c_node"]
+	path = c_node
+	url = git@github.com:project391/c_node.git
+[submodule "c_go"]
+	path = c_go
+	url = git@github.com:project391/c_go.git
