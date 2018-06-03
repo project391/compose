@@ -2,10 +2,12 @@ version: '3'
 services:
   ci:
     image: jenkinsci/blueocean
+    environment: 
+      - JENKINS_OPTS= --httpPort=-1 --httpsPort=8443 --httpsKeyStore=/var/jenkins_home/keystore.jks --httpsKeyStorePassword=adminadmin
     volumes:
       - ./volumes/jenkins_home:/var/jenkins_home
     ports:
-      - "8080:8080"
+      - "8443:8443"
       - "50000:50000"
   node_build:
     build: ./c_node/
